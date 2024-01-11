@@ -252,6 +252,10 @@ body{
 
         &:hover::-webkit-scrollbar-thumb{
         background-color: none;
+
+        &::-webkit-scrollbar{
+        width: 0.5rem;
+      } 
     }
     }
 
@@ -289,7 +293,12 @@ body{
     margin-bottom: 1rem;
 
     &:hover::-webkit-scrollbar-thumb{
-    background-color: none;
+        background-color: none;
+    }
+    
+    &::-webkit-scrollbar{
+        width: 0.5rem;
+    } 
 }
 
 .header{
