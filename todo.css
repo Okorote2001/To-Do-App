@@ -1,0 +1,394 @@
+*, ::before, ::after{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Roboto, Arial, sans-serif;
+  }
+
+body{
+    background-color: rgb(22, 22, 22);
+    height: 100dvh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.todoApp{
+    width: 50%;
+    max-height: 80dvh;
+    background-color: black;
+    box-shadow: inset 0rem 0rem 1rem rgba(0, 128, 0, 0.774);
+    border: solid 0.1rem rgba(0, 128, 0, 0.678);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0rem 0rem 0.2rem 0.1rem rgba(0, 128, 0, 0.432);
+    border-top: none;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    width: max-content;
+    margin-inline: auto;
+    background-color: rgba(0, 128, 0, 0.185);
+    user-select: none;
+
+    h1{
+        color: white;
+        padding: 1.5rem;
+        padding-right: 0rem;
+        padding-left: 1rem;
+    }
+
+    img{
+        width: 5rem;
+        padding: 1rem;
+    }
+}
+
+.inputButton{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 2% 1rem;
+    user-select: none;
+    width: 85%;
+
+
+    input{
+        width: 60%;
+        height: 2rem;
+        appearance: none;
+        border: none;
+        outline: none;
+        background-color: rgb(34, 34, 34);
+        text-indent: 3%;
+        color: white;
+
+        &:focus{
+            background-color: black;
+            border: solid 0.1rem green;
+        }
+    }
+
+    button{
+        width: 15%;
+        height: 2rem;
+        appearance: none;
+        border: none;
+        outline: none;
+        background: linear-gradient(90deg, rgb(34, 34, 34), green);
+        font-weight: 800;
+    }
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, rgba(128, 128, 128, 0.068), rgba(128, 128, 128, 0.068), rgba(128, 128, 128, 0.068), rgba(0, 128, 0, 0.068));
+    width: 80%;
+    max-height: 58%;
+    margin-inline: auto;
+    border-radius: 1rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: black black;
+
+
+    &:hover{
+        scrollbar-width: thick;
+        scrollbar-color: rgba(0, 128, 0, 0.397) black;
+        scrollbar-gutter: 5rem;
+    }
+
+    &:active{
+        scrollbar-color: rgb(0, 128, 0) black;
+    }
+
+    &::-webkit-scrollbar{
+        width: 0.5rem;
+      } 
+        
+    &:hover::-webkit-scrollbar-thumb{
+        background-color: rgba(0, 128, 0, 0.397);
+        border-radius: 0.25rem;
+    }
+
+    &::-webkit-scrollbar-thumb:active{
+        background-color: green;
+    }
+
+    ul{
+        width: 80%;
+    }
+
+    li{
+        color: white;
+        list-style: none;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        border-radius: 1rem;
+
+        .Note{
+            overflow-y: scroll;
+            overflow-x: scroll;
+            max-height: 6rem;
+            width: 100%;
+            border-radius: 1rem;
+            transition: background ease-in-out 0.2s;
+            transition-delay: 0.4s;
+            padding-bottom: 0.35rem;
+            padding-top: 0.35rem;
+            padding-inline: 2%;
+            margin: 0.3rem;
+            text-justify: left;
+            text-indent: 1rem;
+            scrollbar-width: none;
+    
+            &:hover{
+                background-color: rgba(0, 128, 0, 0.137);
+                transition-delay: 0.1ms;
+                transition-duration: 0.5;
+                outline: solid 0.1rem rgba(0, 128, 0, 0.603);
+                
+            }
+
+            &::-webkit-scrollbar{
+                display: none;
+              }
+
+            
+            &::-webkit-scrollbar-corner{
+                display: none;
+            }
+            
+            &:hover::-webkit-scrollbar-thumb{
+                background-color: rgba(0, 128, 0, 0.397);
+                border-radius: 0.25rem;
+            }
+        
+            &:active::-webkit-scrollbar-thumb{
+                background-color: green;
+            }
+        }
+
+        .cancel{
+            width: 1rem;
+            height: 1rem;
+            position: absolute;
+            left: 105%;
+            text-align: center;
+            overflow: hidden;
+            position: absolute;
+            user-select: none;
+
+            &:hover{
+                outline: solid 0.1rem gray;
+                border-radius: 50%;
+                background-color: red;
+            }
+        }
+           
+        &::before{
+            content: '';
+            width: 1rem;
+            height: 1rem;
+            border: solid 0.1rem green;
+            border-radius: 50%;
+            position: absolute;
+            right: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        &.before::before{
+            background-image: url(image/correct.png);
+        }
+    }
+}
+
+.li{
+    position: relative;    
+}
+.li::after{
+    content:'';
+    position: absolute;
+    width: 98%;
+    height: 0.2rem;
+    right: 0.25rem;
+    background: red;
+}
+
+.NoteBackground{
+    background-color: rgba(0, 128, 0, 0.144);
+}
+
+@media (max-width: 280px) {
+    .todoApp{
+        width: 80%;
+    }
+
+    .list{
+        width: 100%;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    li{
+        width: 90%;
+    }
+
+    .inputButton{
+        width: 95%;
+        margin: 0;
+        margin-left: 0.33rem;
+
+        input{
+            flex-grow: 1;
+        }
+
+        button{
+            flex-grow: 1;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .todoApp{
+        width: 80%;
+    }
+}
+
+@media (max-width: 414px) {
+.todoApp{
+    width: 80%;
+}
+
+.list{
+    margin-bottom: 1rem;
+}
+
+.header{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    h1{
+        padding: 0.05rem;
+        padding-right: 0rem;
+        padding-left: 0.5rem;
+        font-size: 180%;
+    }
+
+    img{
+        width: 30%;
+        padding: 0.5rem;
+    }
+}
+}
+
+@media (max-width: 430px) {
+    .todoApp{
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .todoApp{
+        width: 70%;
+    }
+}
+
+@media (max-width: 820px) {
+    .todoApp{
+        width: 70%;
+    }
+
+}
+
+
+@media (max-width: 1024px) {
+    .todoApp{
+        width: 70%;
+    }
+}
+
+
+@media (max-height: 805px) {
+    .list{
+        max-height: 50%;
+    }
+}
+
+@media (min-height: 844px) {
+    .list{
+        max-height: 70%;
+    }
+}
+
+@media (min-height: 667px) {
+    .list{
+        max-height: 70%;
+    }
+}
+
+@media (min-height: 740px) {
+    .list{
+        max-height: 70%;
+    }
+}
+
+@media (min-height: 896px) {
+    .list{
+        min-height: 70%;
+    }
+}
+
+@media (min-height: 932px) {
+    .list{
+        min-height: 70%;
+    }
+}
+
+@media (min-height: 1024px) {
+    .list{
+        min-height: 70%;
+    }
+}
+
+@media (min-height: 1180px) {
+    .list{
+        min-height: 70%;
+    }
+}
+
+@media (min-height: 1366px) {
+    .list{
+        min-height: 70%;
+    }
+}
+
+@media (min-height: 1368px) {
+    .list{
+        min-height: 70%;
+    }
+}
