@@ -159,8 +159,7 @@ body{
             padding-top: 0.35rem;
             padding-inline: 2%;
             margin: 0.3rem;
-            text-justify: left;
-            text-indent: 1rem;
+            text-align: justify;
             scrollbar-width: none;
     
             &:hover{
@@ -243,13 +242,17 @@ body{
 
 @media (max-width: 280px) {
     .todoApp{
-        width: 80%;
+        width: 95%;
     }
 
     .list{
         width: 100%;
         margin-top: 0.5rem;
         margin-bottom: 1rem;
+
+        &:hover::-webkit-scrollbar-thumb{
+        background-color: none;
+    }
     }
 
     li{
@@ -284,6 +287,9 @@ body{
 
 .list{
     margin-bottom: 1rem;
+
+    &:hover::-webkit-scrollbar-thumb{
+    background-color: none;
 }
 
 .header{
