@@ -17,7 +17,7 @@ body{
 }
 
 .todoApp{
-    width: 50%;
+    width: 60%;
     max-height: 80dvh;
     background-color: black;
     box-shadow: inset 0rem 0rem 1rem rgba(0, 128, 0, 0.774);
@@ -254,7 +254,7 @@ body{
         background-color: none;
 
         &::-webkit-scrollbar{
-        width: 0.5rem;
+        width: none;
       } 
     }
     }
@@ -280,7 +280,7 @@ body{
 
 @media (max-width: 375px) {
     .todoApp{
-        width: 80%;
+        width: 90%;
     }
 }
 
@@ -297,7 +297,7 @@ body{
     }
     
     &::-webkit-scrollbar{
-        width: 0.5rem;
+        width: none;
     } 
 }
 
